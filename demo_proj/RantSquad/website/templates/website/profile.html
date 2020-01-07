@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <title>Profile | Rant Squad</title>
+
+ <link href="{% static 'website/profile_styles.css' %}" type="text/css" rel="stylesheet">
+ <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="topnav">
+  <a class="active" href="{% url 'website-profile'%}">RANT SQUAD</a>
+  </div>
+
+  <div class="intro">
+    <h4>Welcome {{user.get_username}}</h4>
+  </div>
+
+  <div class="">
+    <div class="go-to">
+      <a href="#" class="rant-now-button">Rant Now!</a>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="go-to">
+      <a href="{% url 'website-index' %}" class="logout-button">Logout</a>
+    </div>
+  </div>
+
+  <div class="down-container" style="background-color:#f1f1f1">
+    <h5>Rant Squad | Profile</h5>
+  <!--  <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>   -->
+  </div>
+
+  </body>
+</html>
