@@ -1,11 +1,13 @@
 body   {
     background-color: #EEEFF7;
     background-image: url("bg.jpg");
+    font-family: 'Baloo Thambi 2', cursive;
 }
 
 .topnav {
     background-color: #FFA500;
     overflow: hidden;
+    font-family: 'Baloo Thambi 2', cursive;
 }
 
 .topnav a {

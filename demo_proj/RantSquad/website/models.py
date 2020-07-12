@@ -1,8 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.utils import timezone
 
 # Create your models here.
-class RegisterForm(models.Model):
-    name = models.CharField(max_length=40)
-    username = models.CharField(max_length=20)
-    email = models.TextField()
-    password = models.TextField()
+class Post(models.Model):
+    post        = models.TextField()
+    image       = models.ImageField(upload_to='images')
+    hashtags    = models.TextField()
+    date_time   = models.DateTimeField(default = timezone.now)

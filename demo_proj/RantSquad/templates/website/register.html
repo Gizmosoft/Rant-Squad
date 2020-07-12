@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <title>Register | Rant Squad</title>
+
+  <link href="{% static 'website/login_styles.css' %}" type="text/css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
+</head>
+
+<body>
+  <div class="topnav">
+  <a class="active" href="{% url 'website-index' %}">RANT SQUAD</a>
+  </div>
+  <div class="">
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+  </div>
+  <div class="imgcontainer">
+    <img src="{% static 'website/avatar.png' %}" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <form action="register" method="POST">{% csrf_token %}
+      <label>Name</label>
+      <input type="text" name="first_name" placeholder="Enter your First Name here">
+      <input type="text" name="last_name" placeholder="Enter your Last Name here">
+      <br>
+
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Choose a username">
+      <br>
+
+      <label>E-mail</label>
+      <input type="email" name="email" placeholder="Provide an e-mail address">
+      <br>
+
+      <label>Password</label>
+      <input type="password" name="password1" placeholder="Choose a password">
+      <input type="password" name="password2" placeholder="Confirm password">
+      <br>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+  <div class="down-container" style="background-color:#f1f1f1">
+    <h5>Rant Squad | Register</h5>
+  <!--  <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>   -->
+  </div>
+
+</body>
+</html>
+
+
+<!--DUMPS HERE-->
+<!--<label><b>Name</b></label>-->
+    <!--<input type="text" placeholder="Enter Name" name="name" required><br>-->
+
+    <!--<label><b>Username</b></label>-->
+    <!--<input type="text" placeholder="Enter Username" name="uname" required><br>-->
+
+    <!--<label><b>E-Mail</b></label>-->
+    <!--<input type="email" placeholder="Enter E-Mail" name="email" required><br>-->
+
+    <!--<label><b>Password</b></label>-->
+    <!--<input type="password" placeholder="Enter Password" name="psw" required><br>-->
+<!--<label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>-->
